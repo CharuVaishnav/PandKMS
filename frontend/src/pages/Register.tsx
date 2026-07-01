@@ -23,7 +23,7 @@ export default function Register() {
     try {
       await api.post("/auth/register", { email, password });
       await login(email, password);
-      navigate("/dashboard");
+      navigate("/setup-2fa");
     } catch (err: any) {
       setError(err?.response?.data?.detail ?? "Registration failed");
     } finally {

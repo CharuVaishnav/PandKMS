@@ -62,6 +62,8 @@ def verify_otp(body: OTPVerify, db: Session = Depends(get_db), user: User = Depe
 def disable_otp(body: OTPVerify, db: Session = Depends(get_db), user: User = Depends(get_current_user)):
     if not user.totp_secret or not user.totp_enabled:
         raise HTTPException(status_code=400, detail="OTP not enabled")
+    if not user.email_otp_enabled:
+        raise HTTPException(status_code=400, detail="Cannot disable your only two-factor method. Set up another method first.")
     totp = pyotp.TOTP(user.totp_secret)
     if not totp.verify(body.code):
         raise HTTPException(status_code=400, detail="Invalid OTP code")
@@ -86,6 +88,8 @@ def request_email_otp(
         raise HTTPException(status_code=400, detail="Invalid purpose")
     if purpose == "disable" and not user.email_otp_enabled:
         raise HTTPException(status_code=400, detail="Email OTP not enabled")
+    if purpose == "disable" and not user.totp_enabled:
+        raise HTTPException(status_code=400, detail="Cannot disable your only two-factor method. Set up another method first.")
     create_and_send_code(db, user, purpose)
     return {"sent": True}
 
@@ -98,6 +102,8 @@ def confirm_email_otp(
 ):
     if body.purpose not in ("enable", "disable"):
         raise HTTPException(status_code=400, detail="Invalid purpose")
+    if body.purpose == "disable" and not user.totp_enabled:
+        raise HTTPException(status_code=400, detail="Cannot disable your only two-factor method. Set up another method first.")
     if not verify_code(db, user, body.purpose, body.code):
         raise HTTPException(status_code=400, detail="Invalid or expired code")
     user.email_otp_enabled = body.purpose == "enable"

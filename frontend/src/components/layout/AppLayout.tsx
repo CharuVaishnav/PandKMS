@@ -34,6 +34,12 @@ export default function AppLayout() {
     if (!user) fetchMe();
   }, [token]);
 
+  useEffect(() => {
+    if (user && !user.totp_enabled && !user.email_otp_enabled) {
+      navigate("/setup-2fa");
+    }
+  }, [user]);
+
   const handleLogout = () => {
     logout();
     navigate("/login");

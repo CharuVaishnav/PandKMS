@@ -46,8 +46,8 @@ export default function Settings() {
       setMsg("Two-factor authentication disabled.");
       setDisableCode("");
       await fetchMe();
-    } catch {
-      setMsg("Invalid code.");
+    } catch (err: any) {
+      setMsg(err?.response?.data?.detail ?? "Invalid code.");
     }
   };
 
@@ -71,9 +71,13 @@ export default function Settings() {
   };
 
   const requestEmailDisable = async () => {
-    await api.post("/otp/email/request", null, { params: { purpose: "disable" } });
-    setEmailDisableSent(true);
-    setEmailMsg("");
+    try {
+      await api.post("/otp/email/request", null, { params: { purpose: "disable" } });
+      setEmailDisableSent(true);
+      setEmailMsg("");
+    } catch (err: any) {
+      setEmailMsg(err?.response?.data?.detail ?? "Could not send code.");
+    }
   };
 
   const confirmEmailDisable = async (e: React.FormEvent) => {
@@ -84,8 +88,8 @@ export default function Settings() {
       setEmailDisableSent(false);
       setEmailDisableCode("");
       await fetchMe();
-    } catch {
-      setEmailMsg("Invalid or expired code.");
+    } catch (err: any) {
+      setEmailMsg(err?.response?.data?.detail ?? "Invalid or expired code.");
     }
   };
 
