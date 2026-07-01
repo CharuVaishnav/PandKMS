@@ -1,6 +1,8 @@
 import secrets
 from datetime import datetime, timedelta
 
+import httpx
+from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
 from app.core.email import send_email
@@ -39,11 +41,17 @@ def create_and_send_code(db: Session, user: User, purpose: str) -> None:
         "login": "Your PKMS login code",
     }.get(purpose, "Your PKMS verification code")
 
-    send_email(
-        user.email,
-        subject,
-        f"<p>Your PKMS code is <b>{code}</b>. It expires in {CODE_VALID_MINUTES} minutes.</p>",
-    )
+    try:
+        send_email(
+            user.email,
+            subject,
+            f"<p>Your PKMS code is <b>{code}</b>. It expires in {CODE_VALID_MINUTES} minutes.</p>",
+        )
+    except httpx.HTTPStatusError as e:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Could not send email (provider returned {e.response.status_code}). Check RESEND_API_KEY and EMAIL_FROM.",
+        )
 
 
 def verify_code(db: Session, user: User, purpose: str, code: str) -> bool:
