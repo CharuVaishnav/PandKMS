@@ -1,0 +1,117 @@
+<style>
+    @font-face {
+        font-family: 'SignatureChristmasRegular';
+        src: url('wp-content/uploads/2025/09/SignatureChristmasRegular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    .content.blog-topimg.content_top_margin_none {background: none; }
+    .section .container {max-width: 1100px; width: 100%; margin: 0 auto; }
+    .wrapper, body {background-color: #fff; }
+    a:hover, p a:hover {color: #000; }
+    b {font-weight: 600 !important; }
+    h2 {padding: 0; }
+    h3 {font-size: 40px; line-height: 1.3em; }
+    .mb-0 {padding-bottom: 0; }
+    p {font-size: 22px; line-height: 1.5em !important; font-family: 'Open Sans', sans-serif; color: #000; }
+    p.p-0 {padding-bottom: 0 !important; }
+    .section {padding: 60px 15px !important; }
+    .content {background: none; min-height: unset !important; padding: 0 !important; margin-top: 0 !important; }
+    .text-center {text-align: center; }
+    .ultimate-breakthrough-sec.section {background: url(https://www.panachedesai.com/wp-content/uploads/2026/04/Banner-Image.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; padding: 0 0 0 0 !important; }
+    .ultimate-breakthrough-sec .innerBox {text-align: center; padding: 120px 20px 50px; }
+    .ultimate-breakthrough-sec h1 {font-family: 'PlayfairDisplay-Regular'; font-size: 130px; line-height: 1.1em; color: #000; font-weight: 500; }
+    .ultimate-breakthrough-sec p.fromText {padding-bottom: 0; font-size: 35px; font-family: 'PlayfairDisplay-Italic'; font-weight: 600; }
+    .datesBox {background: #5e101d; padding: 10px 20px; }
+    .datesBox * {color: #fff; text-align: center; }
+    .bottom-con p.p1 {font-size: 35px; font-family: 'PlayfairDisplay-Regular'; font-weight: 500; color: #f4d3b2; }
+    .bottom-con p.p2.mb-0 {font-size: 26px; text-transform: uppercase; }
+    .bottom-con p {padding-bottom: 0; }
+    .singulary-sec h3 {color: #5e101d; max-width: 700px; margin: 0 auto; }
+    .large-con {max-width: 1150px; margin: 0 auto; }
+    .join-panache-sec .video {padding: 20px 0 40px;max-width: 800px;margin: 0 auto; }
+    .join-panache-sec {background: url(/wp-content/uploads/2026/04/Background.jpg); background-size: cover; background-position: top center !important; padding-top: 0 !important; }
+    .join-panache-sec h3.text-center {max-width: 770px; margin: 0 auto; }
+    .join-panache-sec p {color: #fff; }
+    .grid-box {display: grid; grid-template-columns: 0.4fr 0.6fr; gap: 40px; align-items: center; }
+    .learn-how-sec h3 {font-family: 'Open Sans'; text-transform: uppercase; font-weight: 500; color: #132e4e; }
+    img.heading-arrow {display: flex; margin: 10px auto 40px; }
+    ul.list-icon li {font-size: 24px; line-height: 1.3em; list-style: none; position: relative; padding-left: 45px; color: #223a56; }
+    ul.list-icon li:before {position: absolute; content: ''; background: url(\/wp-content/uploads/2026/04/List-Icon.png); width: 40px; height: 40px; background-size: 68%; background-repeat: no-repeat; left: 0; top: 5%; /*transform: translateY(-50%);*/ } .possibilities-sec.section {background: url(/wp-content/uploads/2026/04/Greater-Possibilities.jpg); background-repeat: no-repeat; background-size: cover; }
+    .possibilities-sec .innerBox {background: #00000024; padding: 40px 40px 10px; border-radius: 15px; }
+    .possibilities-sec .innerBox * {color: #fff; }
+    .possibilities-sec h2 {font-family: 'Open Sans', sans-serif; padding-bottom: 30px; font-weight: 600; font-size: 42px; }
+    .possibilities-sec ul {padding-bottom: 30px; margin: 0 auto; display: block; width: 700px; max-width: 86%; }
+    .possibilities-sec ul li {list-style: disc; padding: 0 0 0 2px; font-size: 22px; line-height: 1.5em !important; }
+    .what-you-sec ul.list-icon li:before {background: url(/wp-content/uploads/2026/04/shape-icon.png); background-size: 68%; background-repeat: no-repeat; }
+    .what-you-sec .grid-box {grid-template-columns: 0.6fr 0.4fr; }
+    .panache-sec.section {padding-top: 0 !important; }
+    .panache-sec .gridBox {display: grid; grid-template-columns: 0.45fr 0.55fr; gap: 20px; border-radius: 15px; border: 3px solid #6e232e; overflow: hidden; }
+    .panache-sec .gridBox .div:first-child {display: flex; align-items: end; }
+    .panache-sec .gridBox .div:last-child {padding: 40px 40px 0; }
+    .panache-sec .gridBox .div:last-child img {margin: 0 auto; display: flex; }
+    .panache-sec h2 {text-align: center; padding: 10px 0 30px; font-family: 'Open Sans'; }
+    .price-sec.section {background: #6e232e; padding: 40px 0 !important; }
+    .price-sec .gridBox {display: grid; grid-template-columns: 0.4fr 0.6fr; gap: 40px; align-items: center; }
+    .price-sec .desc {font-size: 30px; padding-bottom: 0; }
+    .price-sec .price {font-size: 60px; font-weight: 700; padding: 30px 0 0; line-height: 1em !important; }
+    .price-sec .disclaimer {font-weight: 600; font-style: italic; padding-bottom: 0; }
+    .price-sec div.container-920 a.cta-btn {font-family: "Open Sans", sans-serif; font-size: 23px; padding: 15px 60px; border-radius: 15px; background-color: #F4D3B2; color: #007236; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 15px; }
+    .price-sec .div.container-920 {text-align: center; }
+    .price-sec .div.container-920 * {color: #fff; }
+
+    @media only screen and (max-width:1550px) {}
+
+    @media only screen and (max-width:767px) {
+        p.para1 {margin-bottom: 20px; }
+        .content.blog-topimg.content_top_margin_none .container {padding: 0px 0%; }
+        .section {padding: 40px 20px !important; }
+        p {font-size: 18px; line-height: 1.4em !important; }
+        h2 {font-size: 26px !important; line-height: 1.2em !important; }
+        h2 {font-size: 26px !important; }
+        h3 {font-size: 26px !important; line-height: 1.2em !important; padding-bottom: 20px !important; }
+        .ultimate-breakthrough-sec.section {background-position: bottom; }
+        .ultimate-breakthrough-sec h1 {font-size: 50px; }
+        .ultimate-breakthrough-sec p.fromText {padding-bottom: 5px; font-size: 22px; }
+        .bottom-con p.p1 {font-size: 20px; }
+        .bottom-con p.p2.mb-0 {font-size: 20px; padding: 5px 0 10px; }
+        .bottom-con p {padding-bottom: 0; line-height: 1.2em !important; }
+        .singulary-sec .innerBox {padding: 0; }
+        .join-panache-sec.section {padding-top: 0 !important; }
+        .join-panache-sec .video {padding: 5px 0 20px; }
+        .grid-box {grid-template-columns: repeat(1, 1fr); gap: 15px; }
+        /* .learn-how-sec .grid-box div:first-child {
+            order: 2;
+        } */
+
+        .learn-how-sec h3 {padding-bottom: 10px !important; }
+        img.heading-arrow {margin: 0 auto 25px; max-width: 200px; }
+        ul.list-icon li {font-size: 18px; padding-left: 35px; }
+        ul.list-icon li:before {background-size: 50%; }
+        .possibilities-sec h2 {padding-bottom: 20px; }
+        .possibilities-sec .innerBox {background: #0000004f; padding: 20px 20px 10px; }
+        .possibilities-sec ul {padding-bottom: 10px; }
+        .possibilities-sec ul li {font-size: 18px; line-height: 1.3em !important; padding: 0 0 0 20px; margin-bottom: 15px; }
+        .what-you-sec .grid-box {grid-template-columns: repeat(1, 1fr); }
+        .what-you-sec ul.list-icon li:before {background-size: 55%; }
+        .what-you-sec .grid-box .div:first-child {order: 2; }
+        .panache-sec .gridBox {grid-template-columns: repeat(1, 1fr); gap: 15px; }
+        .panache-sec .gridBox .div:last-child {padding: 20px 20px 0; }
+        .panache-sec .gridBox .div:first-child {order: 2; }
+        .price-sec .gridBox {grid-template-columns: repeat(1, 1fr); gap: 20px; }
+
+        /* .price-sec .gridBox .div:first-child {
+            order: 2;
+        } */
+
+        .price-sec .price {padding: 20px 0 0; }
+        .price-sec .desc {font-size: 18px; }
+        .price-sec.section {padding: 40px 20px !important; }
+    }
+
+    @media only screen and (min-width:768px) {
+        .d-mob-block { display: none; }
+    }
+</style>
