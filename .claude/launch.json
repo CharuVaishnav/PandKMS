@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backend",
+      "runtimeExecutable": "C:\\Users\\SUPER\\Desktop\\P&KMS\\backend\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": ["-m", "uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8000"],
+      "cwd": "C:\\Users\\SUPER\\Desktop\\P&KMS\\backend",
+      "port": 8000
+    },
+    {
+      "name": "frontend",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": ["node_modules\\vite\\bin\\vite.js", "--port", "5173"],
+      "cwd": "C:\\Users\\SUPER\\Desktop\\P&KMS\\frontend",
+      "port": 5173
+    }
+  ]
+}
